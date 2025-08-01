@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<!--
+  MAIN VIEW FXML - Main application layout structure
+  
+  INSTRUCTIONS FOR NON-CODERS:
+  - This file defines the overall layout of the application window
+  - To change spacing: Look for "spacing" attributes and modify values
+  - To change padding: Look for "Insets" tags and modify values
+  - To change alignment: Look for "alignment" attributes
+  - Do not modify the fx:id attributes - these are used by the Java controller
+-->
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.college.booking.controllers.MainController">
+   
+   <!-- TOP SECTION - Header with logo and theme toggle -->
+   <top>
+      <HBox alignment="CENTER_LEFT" spacing="20.0" styleClass="header-container">
+         <padding>
+            <Insets bottom="20.0" left="30.0" right="30.0" top="20.0" />
+         </padding>
+         
+         <!-- COLLEGE LOGO AND TITLE SECTION -->
+         <VBox alignment="CENTER_LEFT" spacing="10.0" HBox.hgrow="ALWAYS">
+            
+            <!-- LOGO CONTAINER -->
+            <HBox alignment="CENTER_LEFT" spacing="15.0">
+               <!-- COLLEGE LOGO IMAGE - CHANGEABLE: Update logo path in controller -->
+               <ImageView fx:id="collegeLogo" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" styleClass="college-logo" />
+               
+               <!-- TITLE SECTION -->
+               <VBox alignment="CENTER_LEFT" spacing="2.0">
+                  <!-- COLLEGE NAME - CHANGEABLE: Update text in controller -->
+                  <Label fx:id="collegeNameLabel" styleClass="college-name" text="RNS First Grade College" />
+                  
+                  <!-- SYSTEM DESCRIPTION - CHANGEABLE: Update text in controller -->
+                  <Label fx:id="systemNameLabel" styleClass="system-name" text="Seminar Hall Booking System" />
+               </VBox>
+            </HBox>
+         </VBox>
+         
+         <!-- THEME TOGGLE BUTTON -->
+         <Button fx:id="themeToggleButton" onAction="#toggleTheme" styleClass="theme-toggle-button" text="🌙" />
+      </HBox>
+   </top>
+   
+   <!-- CENTER SECTION - Main content area -->
+   <center>
+      <StackPane styleClass="main-content">
+         <padding>
+            <Insets bottom="30.0" left="30.0" right="30.0" top="20.0" />
+         </padding>
+         
+         <!-- CONTENT CONTAINER - Holds login/signup forms -->
+         <VBox fx:id="contentContainer" alignment="CENTER" maxWidth="600.0" spacing="30.0" styleClass="content-container">
+            
+            <!-- WELCOME SECTION -->
+            <VBox alignment="CENTER" spacing="15.0" styleClass="welcome-section">
+               
+               <!-- WELCOME MESSAGE - CHANGEABLE: Content updates based on current view -->
+               <Label fx:id="welcomeMessageLabel" alignment="CENTER" styleClass="welcome-message" text="Faculty members, please select your department and log in to access the booking system" textAlignment="CENTER" wrapText="true" />
+               
+               <!-- QUICK INSTRUCTIONS - CHANGEABLE: Content updates based on current view -->
+               <Label fx:id="instructionsLabel" alignment="CENTER" styleClass="instructions" text="Select your department • Enter credentials • Access dashboard" textAlignment="CENTER" />
+            </VBox>
+            
+            <!-- FORM CONTAINER - Will hold login or signup form -->
+            <StackPane fx:id="formContainer" styleClass="form-container">
+               <!-- Forms will be loaded dynamically here -->
+            </StackPane>
+            
+            <!-- NAVIGATION SECTION - Switch between login and signup -->
+            <HBox fx:id="navigationSection" alignment="CENTER" spacing="10.0" styleClass="navigation-section">
+               <!-- Navigation content will be set dynamically -->
+            </HBox>
+         </VBox>
+      </StackPane>
+   </center>
+   
+   <!-- BOTTOM SECTION - Footer -->
+   <bottom>
+      <VBox alignment="CENTER" spacing="10.0" styleClass="footer-container">
+         <padding>
+            <Insets bottom="20.0" left="30.0" right="30.0" top="20.0" />
+         </padding>
+         
+         <!-- FOOTER SEPARATOR LINE -->
+         <HBox prefHeight="1.0" styleClass="footer-separator" />
+         
+         <!-- COPYRIGHT INFORMATION - CHANGEABLE: Update text and year -->
+         <Label fx:id="copyrightLabel" alignment="CENTER" styleClass="copyright" text="© 2024 RNS First Grade College. All rights reserved." textAlignment="CENTER" />
+      </VBox>
+   </bottom>
+</BorderPane>
+
+<!--
+  LAYOUT CUSTOMIZATION GUIDE FOR NON-CODERS:
+  
+  1. CHANGING SPACING:
+     - Look for spacing="value" attributes
+     - Increase values for more space, decrease for less
+     - Common values: 5, 10, 15, 20, 30
+  
+  2. CHANGING PADDING:
+     - Look for <Insets> tags
+     - Modify bottom, left, right, top values
+     - Values are in pixels
+  
+  3. CHANGING ALIGNMENT:
+     - Look for alignment="value" attributes
+     - Options: CENTER, CENTER_LEFT, CENTER_RIGHT, TOP_CENTER, etc.
+  
+  4. CHANGING CONTAINER SIZES:
+     - Look for maxWidth, minWidth, prefWidth attributes
+     - Values are in pixels
+     - Remove constraints by deleting the attribute
+  
+  5. ADDING NEW SECTIONS:
+     - Copy existing VBox or HBox structures
+     - Add unique fx:id attributes for controller access
+     - Update the controller to handle new elements
+  
+  6. STYLING:
+     - All visual styling is controlled by CSS files
+     - styleClass attributes link to CSS rules
+     - Do not add inline styling here
+-->

@@ -1,0 +1,220 @@
+/*
+  LIGHT THEME CSS - Color definitions for light mode
+  
+  INSTRUCTIONS FOR NON-CODERS:
+  - This file defines all colors used in light mode
+  - To change the primary color: Look for #1e3a8a and replace with your college color
+  - To change backgrounds: Look for #ffffff (white) and modify
+  - To change text colors: Look for #1e293b (dark gray) and adjust
+*/
+
+/* ROOT AND LAYOUT BACKGROUNDS */
+.root {
+    -fx-background-color: linear-gradient(to bottom right, #ffffff 0%, #ffffff 70%, #e0e7ff 100%);
+}
+
+.header-container {
+    -fx-background-color: rgba(255, 255, 255, 0.8);
+    -fx-border-color: #e2e8f0;
+}
+
+.footer-separator {
+    -fx-background-color: linear-gradient(to right, transparent 0%, #e2e8f0 50%, transparent 100%);
+}
+
+/* TEXT COLORS */
+.college-name { -fx-text-fill: #1e293b; }
+.system-name { -fx-text-fill: #64748b; }
+.copyright { -fx-text-fill: #64748b; }
+.form-title { -fx-text-fill: #1e293b; }
+.form-description { -fx-text-fill: #64748b; }
+.section-title { -fx-text-fill: #1e293b; }
+.input-label { -fx-text-fill: #374151; }
+
+/* WELCOME MESSAGES */
+.welcome-message {
+    -fx-text-fill: #64748b;
+    -fx-background-color: rgba(30, 58, 138, 0.05);
+    -fx-border-color: rgba(30, 58, 138, 0.1);
+}
+
+.instructions { -fx-text-fill: rgba(100, 116, 139, 0.8); }
+
+/* THEME TOGGLE */
+.theme-toggle-button {
+    -fx-background-color: #f8fafc;
+    -fx-border-color: #e2e8f0;
+    -fx-text-fill: #64748b;
+}
+
+.theme-toggle-button:hover {
+    -fx-background-color: #f1f5f9;
+    -fx-border-color: #cbd5e1;
+}
+
+/* FORM CONTAINERS */
+.login-form, .signup-form {
+    -fx-background-color: rgba(255, 255, 255, 0.6);
+    -fx-border-color: rgba(226, 232, 240, 0.5);
+    -fx-border-width: 1;
+}
+
+/* INPUT FIELDS */
+.form-input {
+    -fx-background-color: rgba(248, 250, 252, 0.5);
+    -fx-border-color: rgba(226, 232, 240, 0.5);
+    -fx-text-fill: #1e293b;
+    -fx-prompt-text-fill: #94a3b8;
+}
+
+.form-input:focused {
+    -fx-border-color: #1e3a8a;
+    -fx-background-color: rgba(255, 255, 255, 0.8);
+}
+
+.form-input:disabled {
+    -fx-background-color: #f8fafc;
+    -fx-text-fill: #94a3b8;
+}
+
+/* PASSWORD TOGGLE */
+.password-toggle {
+    -fx-background-color: rgba(248, 250, 252, 0.5);
+    -fx-border-color: rgba(226, 232, 240, 0.5);
+    -fx-text-fill: #64748b;
+}
+
+.password-toggle:hover {
+    -fx-background-color: #f1f5f9;
+    -fx-text-fill: #1e293b;
+}
+
+/* DEPARTMENT BUTTONS */
+.department-button {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #e2e8f0;
+    -fx-text-fill: #64748b;
+}
+
+.department-button:hover {
+    -fx-background-color: #f8fafc;
+    -fx-border-color: #cbd5e1;
+    -fx-text-fill: #1e293b;
+}
+
+.department-button-selected {
+    -fx-background-color: #1e3a8a;
+    -fx-border-color: #1e3a8a;
+    -fx-text-fill: #ffffff;
+}
+
+.department-description { -fx-text-fill: #64748b; }
+
+/* PRIMARY BUTTONS */
+.primary-button {
+    -fx-background-color: #1e3a8a;
+    -fx-border-color: #1e3a8a;
+    -fx-text-fill: #ffffff;
+}
+
+.primary-button:hover {
+    -fx-background-color: #1d4ed8;
+    -fx-border-color: #1d4ed8;
+}
+
+.primary-button:disabled {
+    -fx-background-color: #cbd5e1;
+    -fx-border-color: #cbd5e1;
+    -fx-text-fill: #94a3b8;
+}
+
+/* SECONDARY BUTTONS */
+.secondary-button {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #e2e8f0;
+    -fx-text-fill: #64748b;
+}
+
+.secondary-button:hover {
+    -fx-background-color: #f8fafc;
+    -fx-border-color: #cbd5e1;
+    -fx-text-fill: #1e293b;
+}
+
+/* LINK BUTTONS */
+.link-button { -fx-text-fill: #1e3a8a; }
+.link-button:hover { -fx-text-fill: #1d4ed8; }
+.navigation-link { -fx-text-fill: #1e3a8a; }
+.navigation-link:hover { -fx-text-fill: #1d4ed8; }
+
+/* CHECKBOXES AND OPTIONS */
+.remember-checkbox { -fx-text-fill: #374151; }
+.terms-checkbox { -fx-text-fill: #374151; }
+.navigation-text { -fx-text-fill: #64748b; }
+
+/* MESSAGES */
+.error-message {
+    -fx-background-color: rgba(220, 38, 38, 0.1);
+    -fx-border-color: rgba(220, 38, 38, 0.2);
+    -fx-text-fill: #dc2626;
+}
+
+.success-message {
+    -fx-background-color: rgba(5, 150, 105, 0.1);
+    -fx-border-color: rgba(5, 150, 105, 0.2);
+    -fx-text-fill: #059669;
+}
+
+.loading-text { -fx-text-fill: #64748b; }
+
+/* COMBO BOX */
+.combo-box {
+    -fx-background-color: rgba(248, 250, 252, 0.5);
+    -fx-border-color: rgba(226, 232, 240, 0.5);
+}
+
+.combo-box:focused {
+    -fx-border-color: #1e3a8a;
+    -fx-background-color: rgba(255, 255, 255, 0.8);
+}
+
+.combo-box .list-cell {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #1e293b;
+}
+
+.combo-box .list-cell:hover { -fx-background-color: #f8fafc; }
+.combo-box .list-cell:selected {
+    -fx-background-color: #1e3a8a;
+    -fx-text-fill: #ffffff;
+}
+
+/* DATE PICKER */
+.date-picker {
+    -fx-background-color: rgba(248, 250, 252, 0.5);
+    -fx-border-color: rgba(226, 232, 240, 0.5);
+}
+
+.date-picker:focused {
+    -fx-border-color: #1e3a8a;
+    -fx-background-color: rgba(255, 255, 255, 0.8);
+}
+
+.date-picker .text-field {
+    -fx-background-color: transparent;
+    -fx-text-fill: #1e293b;
+}
+
+/* SCROLLBARS */
+.scroll-bar .track { -fx-background-color: rgba(248, 250, 252, 0.3); }
+.scroll-bar .thumb { -fx-background-color: rgba(100, 116, 139, 0.3); }
+.scroll-bar .thumb:hover { -fx-background-color: rgba(100, 116, 139, 0.5); }
+
+/* TOOLTIP */
+.tooltip {
+    -fx-background-color: #374151;
+    -fx-text-fill: #ffffff;
+    -fx-background-radius: 4;
+    -fx-font-size: 12px;
+    -fx-padding: 6 8 6 8;
+}

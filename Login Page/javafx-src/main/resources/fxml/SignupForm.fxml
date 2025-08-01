@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<!--
+  SIGNUP FORM FXML - Faculty registration form layout
+  
+  INSTRUCTIONS FOR NON-CODERS:
+  - This file defines the layout of the signup/registration form
+  - To change section order: Rearrange VBox children
+  - To change field layout: Modify GridPane configurations
+  - To change form width: Modify maxWidth on root VBox
+  - Form is scrollable to accommodate all fields
+-->
+
+<ScrollPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.college.booking.controllers.SignupController" fitToWidth="true" styleClass="signup-scroll-pane">
+   <content>
+      <VBox alignment="CENTER" maxWidth="700.0" spacing="30.0" styleClass="signup-form">
+         <padding>
+            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+         </padding>
+
+         <!-- FORM HEADER -->
+         <VBox alignment="CENTER" spacing="8.0" styleClass="form-header">
+            <Label styleClass="form-title" text="Faculty Registration" />
+            <Label styleClass="form-description" text="Create your account to access the seminar hall booking system" />
+         </VBox>
+
+         <!-- SUCCESS/ERROR MESSAGE DISPLAY -->
+         <VBox fx:id="messageContainer" spacing="10.0" visible="false">
+            <Label fx:id="successMessageLabel" styleClass="success-message" visible="false" wrapText="true" />
+            <Label fx:id="errorMessageLabel" styleClass="error-message" visible="false" wrapText="true" />
+         </VBox>
+
+         <!-- PERSONAL INFORMATION SECTION -->
+         <VBox spacing="20.0" styleClass="form-section">
+            <!-- SECTION HEADER -->
+            <HBox alignment="CENTER_LEFT" spacing="10.0" styleClass="section-header">
+               <Label styleClass="section-icon" text="👤" />
+               <Label styleClass="section-title" text="Personal Information" />
+            </HBox>
+
+            <!-- PERSONAL INFO FIELDS -->
+            <GridPane hgap="15.0" vgap="15.0" styleClass="input-grid">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" />
+                  <ColumnConstraints hgrow="SOMETIMES" />
+               </columnConstraints>
+
+               <!-- FULL NAME -->
+               <VBox spacing="6.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                  <Label styleClass="input-label" text="Full Name *" />
+                  <TextField fx:id="fullNameField" promptText="Enter your full name" styleClass="form-input" />
+               </VBox>
+
+               <!-- EMAIL -->
+               <VBox spacing="6.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                  <Label styleClass="input-label" text="Email Address *" />
+                  <TextField fx:id="emailField" promptText="your.email@college.edu" styleClass="form-input" />
+               </VBox>
+
+               <!-- PHONE -->
+               <VBox spacing="6.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                  <Label styleClass="input-label" text="Phone Number *" />
+                  <TextField fx:id="phoneField" promptText="9876543210" styleClass="form-input" />
+               </VBox>
+
+               <!-- DATE OF BIRTH -->
+               <VBox spacing="6.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <Label styleClass="input-label" text="Date of Birth" />
+                  <DatePicker fx:id="dateOfBirthPicker" promptText="Select date" styleClass="form-input" />
+               </VBox>
+            </GridPane>
+         </VBox>
+
+         <!-- PROFESSIONAL INFORMATION SECTION -->
+         <VBox spacing="20.0" styleClass="form-section">
+            <!-- SECTION HEADER -->
+            <HBox alignment="CENTER_LEFT" spacing="10.0" styleClass="section-header">
+               <Label styleClass="section-icon" text="💼" />
+               <Label styleClass="section-title" text="Professional Information" />
+            </HBox>
+
+            <!-- PROFESSIONAL INFO FIELDS -->
+            <GridPane hgap="15.0" vgap="15.0" styleClass="input-grid">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" />
+                  <ColumnConstraints hgrow="SOMETIMES" />
+               </columnConstraints>
+
+               <!-- FACULTY ID -->
+               <VBox spacing="6.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                  <Label styleClass="input-label" text="Faculty ID" />
+                  <TextField fx:id="facultyIdField" promptText="FAC001 (if applicable)" styleClass="form-input" />
+               </VBox>
+
+               <!-- EXPERIENCE -->
+               <VBox spacing="6.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                  <Label styleClass="input-label" text="Years of Experience *" />
+                  <TextField fx:id="experienceField" promptText="5" styleClass="form-input" />
+               </VBox>
+
+               <!-- DEPARTMENT SELECTION -->
+               <VBox spacing="6.0" GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.columnSpan="2">
+                  <Label styleClass="input-label" text="Department *" />
+                  <GridPane fx:id="departmentGrid" hgap="10.0" styleClass="department-grid">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" />
+                        <ColumnConstraints hgrow="SOMETIMES" />
+                        <ColumnConstraints hgrow="SOMETIMES" />
+                     </columnConstraints>
+                     <!-- Department buttons will be added programmatically -->
+                  </GridPane>
+                  <Label fx:id="selectedDepartmentLabel" styleClass="department-description" visible="false" />
+               </VBox>
+
+               <!-- DESIGNATION -->
+               <VBox spacing="6.0" GridPane.columnIndex="0" GridPane.rowIndex="2" GridPane.columnSpan="2">
+                  <Label styleClass="input-label" text="Designation *" />
+                  <ComboBox fx:id="designationComboBox" maxWidth="Infinity" promptText="Select your designation" styleClass="form-input" />
+               </VBox>
+            </GridPane>
+         </VBox>
+
+         <!-- ACCOUNT INFORMATION SECTION -->
+         <VBox spacing="20.0" styleClass="form-section">
+            <!-- SECTION HEADER -->
+            <HBox alignment="CENTER_LEFT" spacing="10.0" styleClass="section-header">
+               <Label styleClass="section-icon" text="🔐" />
+               <Label styleClass="section-title" text="Account Information" />
+            </HBox>
+
+            <!-- ACCOUNT INFO FIELDS -->
+            <GridPane hgap="15.0" vgap="15.0" styleClass="input-grid">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" />
+                  <ColumnConstraints hgrow="SOMETIMES" />
+               </columnConstraints>
+
+               <!-- USERNAME -->
+               <VBox spacing="6.0" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2">
+                  <Label styleClass="input-label" text="Username *" />
+                  <TextField fx:id="usernameField" promptText="Choose a unique username" styleClass="form-input" />
+               </VBox>
+
+               <!-- PASSWORD -->
+               <VBox spacing="6.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                  <Label styleClass="input-label" text="Password *" />
+                  <HBox alignment="CENTER_LEFT" spacing="0.0" styleClass="password-container">
+                     <TextField fx:id="passwordVisibleField" promptText="Minimum 8 characters" styleClass="form-input password-input" visible="false" HBox.hgrow="ALWAYS" />
+                     <PasswordField fx:id="passwordField" promptText="Minimum 8 characters" styleClass="form-input password-input" HBox.hgrow="ALWAYS" />
+                     <Button fx:id="passwordToggleButton" onAction="#togglePasswordVisibility" styleClass="password-toggle" text="👁" />
+                  </HBox>
+               </VBox>
+
+               <!-- CONFIRM PASSWORD -->
+               <VBox spacing="6.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <Label styleClass="input-label" text="Confirm Password *" />
+                  <HBox alignment="CENTER_LEFT" spacing="0.0" styleClass="password-container">
+                     <TextField fx:id="confirmPasswordVisibleField" promptText="Re-enter your password" styleClass="form-input password-input" visible="false" HBox.hgrow="ALWAYS" />
+                     <PasswordField fx:id="confirmPasswordField" promptText="Re-enter your password" styleClass="form-input password-input" HBox.hgrow="ALWAYS" />
+                     <Button fx:id="confirmPasswordToggleButton" onAction="#toggleConfirmPasswordVisibility" styleClass="password-toggle" text="👁" />
+                  </HBox>
+               </VBox>
+            </GridPane>
+         </VBox>
+
+         <!-- TERMS AND CONDITIONS -->
+         <VBox spacing="10.0" styleClass="terms-section">
+            <CheckBox fx:id="agreeToTermsCheckbox" styleClass="terms-checkbox" text="I agree to the Terms and Conditions and Privacy Policy" wrapText="true" />
+         </VBox>
+
+         <!-- SUBMIT BUTTONS -->
+         <VBox spacing="15.0" styleClass="button-section">
+            <!-- CREATE ACCOUNT BUTTON -->
+            <Button fx:id="createAccountButton" defaultButton="true" maxWidth="Infinity" onAction="#handleCreateAccount" styleClass="primary-button" text="Create Account" />
+
+            <!-- BACK TO LOGIN BUTTON -->
+            <Button fx:id="backToLoginButton" maxWidth="Infinity" onAction="#handleBackToLogin" styleClass="secondary-button" text="Back to Login" />
+         </VBox>
+
+         <!-- LOADING INDICATOR -->
+         <VBox fx:id="loadingContainer" alignment="CENTER" spacing="10.0" styleClass="loading-container" visible="false">
+            <Label styleClass="loading-text" text="Creating account..." />
+         </VBox>
+      </VBox>
+   </content>
+</ScrollPane>
+
+<!--
+  LAYOUT CUSTOMIZATION GUIDE FOR NON-CODERS:
+  
+  1. CHANGING FORM WIDTH:
+     - Modify maxWidth attribute on main VBox
+     - Larger values = wider form
+  
+  2. CHANGING SECTION ORDER:
+     - Rearrange the main VBox children
+     - Each section is wrapped in its own VBox
+  
+  3. CHANGING FIELD LAYOUT:
+     - Modify GridPane columnConstraints for different column layouts
+     - Change GridPane.columnSpan for fields spanning multiple columns
+     - Adjust hgap and vgap for spacing
+  
+  4. ADDING NEW FIELDS:
+     - Copy existing field VBox structure
+     - Add to appropriate GridPane with row/column indices
+     - Add fx:id for controller access
+  
+  5. CHANGING SPACING:
+     - Modify spacing attributes on VBox and GridPane elements
+     - Adjust padding on root VBox for overall form padding
+  
+  6. SCROLLING BEHAVIOR:
+     - ScrollPane automatically handles form scrolling
+     - fitToWidth ensures form uses full width
+     - Remove ScrollPane for non-scrollable form
+-->
