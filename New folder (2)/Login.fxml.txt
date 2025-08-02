@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefWidth="350.0" prefHeight="400.0" style="-fx-background-color: #ffffff;" xmlns:fx="http://javafx.com/fxml" fx:controller="yourpackage.LoginController">
+    <VBox alignment="CENTER" spacing="18" layoutX="30" layoutY="40">
+        <Label text="Seminar Hall Login" style="-fx-text-fill: #1A73E8;" font="$x-large"/>
+        
+        <TextField fx:id="usernameField" promptText="Username" maxWidth="240" style="-fx-background-radius:8; -fx-padding: 8 8 8 8;"/>
+        
+        <PasswordField fx:id="passwordField" promptText="Password" maxWidth="240" style="-fx-background-radius:8; -fx-padding: 8 8 8 8;"/>
+        
+        <HBox alignment="CENTER_LEFT" spacing="10" maxWidth="240">
+            <CheckBox fx:id="rememberMeCheckBox" text="Remember me" style="-fx-text-fill: #1A73E8;"/>
+        </HBox>
+        
+        <HBox alignment="CENTER_LEFT" spacing="15" maxWidth="240">
+            <Label text="Department:" style="-fx-text-fill: #1A73E8;"/>
+            <RadioButton fx:id="bcaRadio" text="BCA"/>
+            <RadioButton fx:id="bbaRadio" text="BBA"/>
+            <RadioButton fx:id="bcomRadio" text="BCOM"/>
+        </HBox>
+        
+        <Button text="Login" fx:id="loginButton" style="-fx-background-color:#1A73E8; -fx-text-fill:#ffffff; -fx-background-radius:8; -fx-font-size:14px;" maxWidth="240"/>
+    </VBox>
+</AnchorPane>
